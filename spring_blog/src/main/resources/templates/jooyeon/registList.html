@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog List</title>
+    <link rel="stylesheet" th:href="@{/css/registList.css}">
+</head>
+<body>
+
+<div class="header-container">
+    <div class="logo">
+        <a href="#">JooYeon's Blog</a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#">Get Your Beauty</a></li>
+            <li><a href="#">Skin Makeup</a></li>
+            <li><a href="#">Lip Makeup</a></li>
+            <li><a href="#">Perfume</a></li>
+        </ul>
+    </nav>
+    <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button type="submit">
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
+    <div class="user-actions">
+        <a href="#" class="login">Login</a>
+    </div>
+</div>
+
+<h1>Blog List</h1>
+<div class="container">
+    <div th:each="blog : ${blogs}">
+        <div class="blog-entry">
+            <h2 th:text="${blog.blogTitle}">Blog Title</h2>
+            <p th:text="${blog.blogContent}">Blog Content</p>
+            <p>Created on: <span th:text="${blog.createDate}">Date</span></p>
+            <a th:href="@{/jooyeon/edit/{id}(id=${blog.id})}">Edit</a>
+            <a th:href="@{/jooyeon/delete/{id}(id=${blog.id})}">Delete</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -69,7 +69,7 @@ public class JooyeonBlog {
 
 
     // 추가된 setId 메서드
-    public void setId(Integer blogNo) {
+    public void setId(int blogNo) {
         this.blogNo = blogNo;
     }
 

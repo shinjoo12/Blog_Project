@@ -67,7 +67,8 @@ public class JooyeonBlog {
     }
 
     public Integer getId() {
-        return getId();
+        return getBlogNo();
+
     }
 
 

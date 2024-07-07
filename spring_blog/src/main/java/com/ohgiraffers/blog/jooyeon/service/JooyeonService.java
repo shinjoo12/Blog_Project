@@ -47,51 +47,52 @@ public class JooyeonService {
 
         for (JooyeonBlog blog : jooyeonBlogs) {
             BlogDTO blogDTO = new BlogDTO();
-            blogDTO.setBlogTitle(blog.getId());
+            blogDTO.setId(String.valueOf(blog.getBlogNo()));
             blogDTO.setBlogTitle(blog.getBlogTitle());
             blogDTO.setBlogContent(blog.getBlogContent());
             blogDTO.setCreateDate(blog.getCreateDate());
-            blogDTOs.add(blogDTO);
+            blogDTOs.add(blogDTO); // 조회된 블로그 포스트를 DTO 리스트에 추가
         }
 
         return blogDTOs;
     }
-
+    // 추가된 블로그 포스트 ID로 조회 메서드
     public BlogDTO getBlogById(Integer id) {
-        JooyeonBlog blog = jooyeonRepository.findById(id).orElse(null);
+        JooyeonBlog blog = jooyeonRepository.findById(id).orElse(null); // ID로 블로그 포스트 조회
         if (blog != null) {
             BlogDTO blogDTO = new BlogDTO();
-            blogDTO.setId(blog.getId());
+            blogDTO.setId(String.valueOf(blog.getBlogNo())); // int 값을 String으로 변환
             blogDTO.setBlogTitle(blog.getBlogTitle());
             blogDTO.setBlogContent(blog.getBlogContent());
             blogDTO.setCreateDate(blog.getCreateDate());
-            return blogDTO;
+            return blogDTO; // 조회된 블로그 포스트를 DTO로 변환하여 반환
         }
-        return null;
+        return null; // 블로그 포스트가 없으면 null 반환
     }
 
     @Transactional
     public void deleteBlogPost(Integer id) {
+
         jooyeonRepository.deleteById(id);
     }
 
-    @org.springframework.transaction.annotation.Transactional
+    @Transactional
     public void savePost(BlogDTO blogDTO) {
         JooyeonBlog blog = new JooyeonBlog();
         blog.setBlogTitle(blogDTO.getBlogTitle());
         blog.setBlogContent(blogDTO.getBlogContent());
         blog.setCreateDate(new Date());
-        jooyeonRepository.save(blog);
+        jooyeonRepository.save(blog); // 블로그 포스트 저장
     }
 
 
-    @org.springframework.transaction.annotation.Transactional
+    @Transactional
     public void updateBlog(BlogDTO blogDTO) {
         JooyeonBlog blog = jooyeonRepository.findById(blogDTO.getId()).orElse(null);
         if (blog != null) {
             blog.setBlogTitle(blogDTO.getBlogTitle());
             blog.setBlogContent(blogDTO.getBlogContent());
-            jooyeonRepository.save(blog);
+            jooyeonRepository.save(blog); // 블로그 포스트 업데이트
         }
     }
 
