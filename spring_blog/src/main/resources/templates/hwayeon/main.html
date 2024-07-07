@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hwayeon blog</title>
+<!--    <link rel="stylesheet" th:href="@{/css/header.css}">-->
+</head>
+<body>
+<!-- 헤더 시작 -->
+<header>
+<!--    <div th:insert="fragments/header :: headerFragment"></div>-->
+    <div class="headerlogo">
+        <a th:href="@{/}">
+        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEyMTVfMjc3%2FMDAxNjcxMDkwNjU3NjAx.uy05CjAv_4VymZIj8qCXAei3LEHvgFy_llwv_uB5ubgg.4DUvwuY6JLlmv5BUTBIAKvRz-T2vXJCO17EQPPJ-_-sg.PNG.y2kwooga%2F%25B3%25D7%25C0%25CC%25B9%25F6_AI-05.png&type=sc960_832">
+        </a>
+    </div>
+    <div class="subject">
+        hwayeon blog
+    </div>
+
+    <div class="serch">
+        <div class="writebutton">
+            <button type="button" class="btn btn-primary" onclick="location.href='/hwayeon/editpage'">게시글 등록</button>
+        </div>
+        <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fe7.pngegg.com%2Fpngimages%2F381%2F351%2Fpng-clipart-computer-icons-google-search-icon-design-magnifying-glass-cartoon-logo-android.png&type=sc960_832">
+    </div>
+    </div>
+</header>
+<!-- 헤더 끝 -->
+
+<!-- 메인 부분 시작 -->
+<section>
+    <div class="container">
+        <div>
+            <div class="thumbnail">
+                썸네일
+            </div>
+            <div class="Summary">
+                <div class="blogtitle">
+                    <!--  edit page의 제목 부분을 받아옴     -->
+                    <h3>제목: <span th:text="${blogTitle}">블로그 제목</span></h3>
+                </div>
+                <div class="blogcontents">
+                    <!--  edit page의 내용 부분을 받아옴     -->
+                    <p>내용: <span th:text="${blogContent}">블로그 내용</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!--메인 부분 끝 -->
+
+<!--풋터 부분 시작-->
+<footer>
+    풋터
+</footer>
+
+</body>
+
+<style>
+    /* 전체 레이아웃 */
+    body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto auto;
+        gap: 20px;
+    }
+
+    /* 헤더 */
+    header {
+        grid-column: 1 / 4;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid black;
+    }
+
+    .headerlogo a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px; /* 원하는 높이로 설정 */
+    }
+
+    .headerlogo a img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        margin : 0px 5px 0px 5px;
+    }
+
+    .serch {
+        display: flex;
+        margin: 0px 5px 0px 5px;
+    }
+
+    .serch img {
+        height: 30px;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        margin : 0px 5px 0px 5px;
+    }
+
+    /* 메인 컨텐츠 */
+    section {
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto auto;
+        gap: 20px;
+        width: 100%;
+        height: 100%;
+        border: 1px solid black;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto auto;
+        gap: 20px;
+    }
+
+    .logo {
+        grid-column: 1 / 2;
+        text-align: center;
+        background-color: #f2f2f2;
+        padding: 20px 0;
+    }
+
+    .thumbnail {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        text-align: center;
+        background-color: #f2f2f2;
+        padding: 20px 0;
+    }
+
+    .Summary {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .writebutton {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        text-align: right;
+    }
+
+    /* 푸터 */
+    footer {
+        grid-column: 1 / 4;
+        text-align: center;
+        background-color: #f2f2f2;
+        padding: 20px 0;
+    }
+
+</style>
+</html>

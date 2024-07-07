@@ -1,0 +1,168 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e1d6ef;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+.header-container {
+    background-color: #cbb3e8;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 150px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+
+    padding: 10px; /* 모든 입력란의 패딩을 동일하게 설정 */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px; /* 글자 크기 조정 */
+}
+
+.search-bar button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 12px; /* 버튼의 패딩을 조정하여 크기를 맞춤 */
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+.user-actions a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 10px;
+}
+
+/* Main Content Styles */
+.main-content {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* 세로로 배치하기 위한 설정 */
+}
+
+.post-container {
+    width: 600px;
+
+    margin: 40px auto;
+    padding: 40px;
+    display: flex;
+    flex-direction: column; /* 세로로 배치하기 위한 설정 */
+}
+
+.post-container h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.post-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-container form label {
+    margin-bottom: 5px;
+}
+
+.post-container form input,
+.post-container form textarea {
+
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.post-container form textarea {
+    resize: vertical;
+    width: 50px;
+}
+
+.post-button {
+    width: 100%; /* 버튼 너비를 100%로 설정하여 부모 요소에 맞춤 */
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px; /* 버튼 위쪽 마진을 추가하여 간격을 조정 */
+}
+
+.blog-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #87749e;
+    border-radius: 4px;
+}
+
+.blogtitle {
+    width: 60px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.blogcontents {
+    line-height: 1.6;
+}
+
+#title {
+    width: 100%; /* 제목 입력란 너비를 100%로 설정 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+#content {
+    width: 100%; /* 내용 입력란 너비를 100%로 설정 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}

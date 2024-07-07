@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Blog</title>
+
+</head>
+<body>
+
+
+
+<div class="container">
+    <h2>Delete Blog</h2>
+    <form th:action="@{/jooyeon/delete/{id}(id=${blogDTO.id})}" method="get">
+        <input type="hidden" name="confirm" value="true"/>
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+
+</div>
+
+
+
+</body>
+</html>
